@@ -1,0 +1,135 @@
+.page {
+  background-color: $color-blue-zodiac;
+
+  &__section {
+    position: relative;
+    // height: 44vw;
+    height: 50vw;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh)*100);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding-top: 100px;
+
+    &-bg {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-color: $color-pattens-blue;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__text-container {
+    padding-bottom: 200px;
+
+    @include vp--1023 {
+      padding-bottom: 100px;
+    }
+
+    @include vp--767 {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 58px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    max-width: 810px;
+    margin: 0;
+    margin-bottom: 80px;
+
+    @include vp--1023 {
+      font-size: 38px;
+      line-height: 48px;
+      margin-bottom: 60px;
+    }
+
+    @include vp--767 {
+      font-size: 28px;
+      line-height: 38px;
+      margin-bottom: 20px;
+    }
+
+    span {
+      color: $color-summer-sky-2;
+    }
+  }
+
+  &__info-text {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    @include vp--767 {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+
+  &__info-list {
+    @include list-reset;
+    margin-bottom: 80px;
+
+    @include vp--767 {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__info-item {
+    position: relative;
+    font-size: 20px;
+    line-height: 24px;
+    padding-left: 25px;
+
+    @include vp--767 {
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 5px;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 5px;
+      height: 1.5px;
+      left: 10px;
+      top: 50%;
+      background-color: $color-default-black;
+    }
+  }
+
+  &__info-btn-wrapper {
+    display: flex;
+
+    @include vp--767 {
+      flex-direction: column;
+    }
+
+    .btn:not(:last-of-type) {
+      margin-right: 30px;
+
+      @include vp--767 {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

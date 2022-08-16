@@ -1,0 +1,42 @@
+@mixin vp--1439 {
+  @media (max-width: $vp--1440 - 1) {
+    @content;
+  }
+}
+
+@mixin vp--1023 {
+  @media (max-width: $vp--1024 - 1) {
+    @content;
+  }
+}
+
+@mixin vp--767 {
+  @media (max-width: $vp--768 - 1) {
+    @content;
+  }
+}
+
+@mixin vp--374 {
+  @media (max-width: $vp--375 - 1) {
+    @content;
+  }
+}
+
+@mixin button-reset {
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin link-reset {
+  text-decoration: none;
+  color: inherit;
+}
