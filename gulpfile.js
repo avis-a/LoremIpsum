@@ -3,7 +3,7 @@ const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
 const plumber = require('gulp-plumber');
 const fileInclude = require('gulp-file-include');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const svgstore = require('gulp-svgstore');
 const rename = require('gulp-rename');
 const autoprefixer = require('gulp-autoprefixer');
@@ -16,7 +16,7 @@ const $ = gulpLoadPlugins();
 
 gulp.task('deploy', function() {
   return gulp.src('./dist/**/*')
-    .pipe(ghPages());
+    .pipe(ghPages({branch: 'github-pages'}));
 });
 
 /* Primary tasks */
@@ -29,7 +29,7 @@ gulp.task('serve', (done) => {
 });
 
 gulp.task('build', (done) => {
-    gulp.series('clean', gulp.parallel('html', 'styles', 'scripts', 'images', 'sprite', 'fonts'), 'browsersync', 'watch')(done)
+    gulp.series('clean', gulp.parallel('html', 'styles', 'scripts', 'images', 'sprite', 'fonts'))(done)
 });
 
 gulp.task('html', () => {
