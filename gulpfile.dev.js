@@ -28,7 +28,9 @@ var webpackConfig = require('./webpack.config.js');
 
 var $ = gulpLoadPlugins();
 gulp.task('deploy', function () {
-  return gulp.src('./dist/**/*').pipe(ghPages());
+  return gulp.src('./dist/**/*').pipe(ghPages({
+    branch: 'github-pages'
+  }));
 });
 /* Primary tasks */
 
