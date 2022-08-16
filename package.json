@@ -45,6 +45,7 @@
     "serve:test": "cross-env NODE_ENV=test gulp serve",
     "serve:dist": "cross-env NODE_ENV=production gulp serve",
     "start": "gulp serve",
+    "deploy": "gulp deploy",
     "build": "cross-env NODE_ENV=production gulp",
     "test": "npm run serve:test",
     "tasks": "gulp --tasks"

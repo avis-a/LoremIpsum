@@ -32,10 +32,6 @@ gulp.task('build', (done) => {
     gulp.series('clean', gulp.parallel('html', 'styles', 'scripts', 'images', 'sprite', 'fonts'), 'browsersync', 'watch')(done)
 });
 
-gulp.task('deploy', (done) => {
-    gulp.series('clean', gulp.parallel('html', 'styles', 'scripts', 'images', 'sprite', 'fonts'), 'browsersync', 'watch')(done)
-});
-
 gulp.task('html', () => {
     return gulp.src(['./source/*.html'])
         .pipe(plumber())
